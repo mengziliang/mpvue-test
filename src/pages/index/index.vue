@@ -1,7 +1,7 @@
 <template>
-  <div @click="clickHandle">
+  <div>
 
-    <div class="userinfo" @click="bindViewTap">
+    <div class="userinfo">
       <img class="userinfo-avatar" v-if="userInfo.avatarUrl" :src="userInfo.avatarUrl" background-size="cover" />
       <img class="userinfo-avatar" src="/static/images/user.png" background-size="cover" />
 
@@ -22,7 +22,7 @@
       <input type="text" class="form-control" v-model.lazy="motto" placeholder="v-model.lazy" />
     </form>
 
-    <a class="counter">去往Vuex示例页面</a>
+    <a class="counter" @click="toLog">去往Log示例页面</a>
     <div class="test-stylus">測試stylus<p>123</p></div>
 
     <div class="all">
@@ -53,17 +53,11 @@ export default {
   },
 
   methods: {
-    bindViewTap () {
-      const url = '../logs/main'
-      if (mpvuePlatform === 'wx') {
-        mpvue.switchTab({ url })
-      } else {
-        mpvue.navigateTo({ url })
-      }
-    },
-    clickHandle (ev) {
-      console.log('clickHandle:', ev)
-      // throw {message: 'custom test'}
+    toLog () {
+      this.$router.push({
+        path: '/pages/logs/index',
+        isTab: true
+      })
     }
   },
 

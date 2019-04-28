@@ -1,12 +1,24 @@
 {
   "pages": [
-    "pages/index/index",
-    "pages/logs/index"
+    {
+      "path": "pages/index/index",
+      "name": "Index",
+      "config": {
+        "navigationBarTitleText": "首頁"
+      }
+    },
+    {
+      "path": "pages/logs/index",
+      "name": "Log",
+      "config": {
+        "navigationBarTitleText": "日誌"
+      }
+    }
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "e生活",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
@@ -14,14 +26,13 @@
     "backgroundColor": "#fafafa",
     "selectedColor": "#333",
     "borderStyle": "white",
-
     "list": [{
       "text": "首页",
       "pagePath": "pages/index/index",
       "iconPath": "static/tabs/home.png",
       "selectedIconPath": "static/tabs/home-active.png"
     }, {
-      "text": "订单",
+      "text": "日誌",
       "pagePath": "pages/logs/index",
       "iconPath": "static/tabs/orders.png",
       "selectedIconPath": "static/tabs/orders-active.png"
