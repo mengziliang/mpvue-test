@@ -111,7 +111,6 @@ let baseWebpackConfig = {
       'mpvue': 'global.mpvue',
       'mpvuePlatform': 'global.mpvuePlatform'
     }),
-    new MpvuePlugin(),
     new CopyWebpackPlugin([{
       from: '**/*.json',
       to: ''

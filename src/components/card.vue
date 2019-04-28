@@ -1,7 +1,7 @@
 <template>
   <div>
     <p class="card">
-      {{text}}
+      {{text}}123
     </p>
   </div>
 </template>
@@ -14,6 +14,6 @@ export default {
 
 <style>
 .card {
-  padding: 10px;
+  padding: 10px; color: red;
 }
 </style>
