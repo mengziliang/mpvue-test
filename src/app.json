@@ -13,6 +13,13 @@
       "config": {
         "navigationBarTitleText": "日誌"
       }
+    },
+    {
+      "path": "pages/list/index",
+      "name": "List",
+      "config": {
+        "navigationBarTitleText": "列表"
+      }
     }
   ],
   "window": {
@@ -20,6 +27,11 @@
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "e生活",
     "navigationBarTextStyle": "black"
+  },
+  "usingComponents": {
+    "van-button": "static/vant/button/index",
+    "van-cell": "static/vant/cell/index",
+    "van-cell-group": "static/vant/cell-group/index"
   },
   "tabBar": {
     "color": "#999",

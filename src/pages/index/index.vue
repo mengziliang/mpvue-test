@@ -1,36 +1,9 @@
 <template>
   <div>
 
-    <div class="userinfo">
-      <img class="userinfo-avatar" v-if="userInfo.avatarUrl" :src="userInfo.avatarUrl" background-size="cover" />
-      <img class="userinfo-avatar" src="/static/images/user.png" background-size="cover" />
+    <card :text="motto"></card>
+    <van-button type="info" @click="toLog">去往Log示例页面</van-button>
 
-      <div class="userinfo-nickname">
-        <card :text="userInfo.nickName"></card>
-      </div>
-    </div>
-
-    <div class="usermotto">
-      <div class="user-motto">
-        <card :text="motto"></card>
-      </div>
-    </div>
-
-    <form class="form-container">
-      <input type="text" class="form-control" :value="motto" placeholder="v-model" />
-      <input type="text" class="form-control" v-model="motto" placeholder="v-model" />
-      <input type="text" class="form-control" v-model.lazy="motto" placeholder="v-model.lazy" />
-    </form>
-
-    <a class="counter" @click="toLog">去往Log示例页面</a>
-    <div class="test-stylus">測試stylus<p>123</p></div>
-
-    <div class="all">
-        <div class="left">
-        </div>
-        <div class="right">
-        </div>
-    </div>
   </div>
 </template>
 
@@ -40,18 +13,12 @@ import card from '@/components/card'
 export default {
   data () {
     return {
-      motto: 'Hello miniprograme',
-      userInfo: {
-        nickName: 'mpvue',
-        avatarUrl: 'http://mpvue.com/assets/logo.png'
-      }
+      motto: 'miniprograme'
     }
   },
-
   components: {
     card
   },
-
   methods: {
     toLog () {
       this.$router.push({
@@ -60,66 +27,14 @@ export default {
       })
     }
   },
-
   created () {
-    // let app = getApp()
+    let app = getApp()
+    console.log(app)
+  },
+  mounted () {
   }
 }
 </script>
 
 <style scoped lang="stylus">
-  .test-stylus
-    color red; font-size 24rpx;
-</style>
-<style scoped>
-.userinfo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
-}
-
-.userinfo-nickname {
-  color: #aaa;
-}
-
-.usermotto {
-  margin-top: 150px;
-}
-
-.form-control {
-  display: block;
-  padding: 0 12px;
-  margin-bottom: 5px;
-  border: 1px solid #ccc;
-}
-.all{
-  width:7.5rem;
-  height:1rem;
-  background-color:blue;
-}
-.all:after{
-  display:block;
-  content:'';
-  clear:both;
-}
-.left{
-  float:left;
-  width:3rem;
-  height:1rem;
-  background-color:red;
-}
-
-.right{
-  float:left;
-  width:4.5rem;
-  height:1rem;
-  background-color:green;
-}
 </style>
